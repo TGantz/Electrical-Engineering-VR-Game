@@ -1,6 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+// Used this to create a rotation on the skybox, which gives a sense that the environment is moving.  Control the speed of rotation in the Inspector
+
 
 public class SpaceRotation : MonoBehaviour 
 {
@@ -9,7 +12,6 @@ public class SpaceRotation : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		//Sets the float value of "_Rotation", adjust it by Time.time and a multiplier.
-		RenderSettings.skybox.SetFloat("_Rotation", Time.time * speedMultiplier);  
+		this.gameObject.transform.Rotate(0,speedMultiplier*Time.deltaTime,0);  
 	}
 }
